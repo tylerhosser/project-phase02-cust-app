@@ -31,8 +31,11 @@ export function App(params) {
   }
 
   let onDeleteClick = function () {
-    log("in onDeleteClick()");
-  }
+    if(formObject.id >= 0){
+    deleteById(formObject.id);
+    }
+    setFormObject(blankCustomer);
+    }
 
   let onSaveClick = function () {
     log("in onSaveClick()");
