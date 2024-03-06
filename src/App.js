@@ -25,7 +25,7 @@ export function App(params) {
     }
   }  
 
-  const handleInputChange = function (event) {
+  const handleInputChange = function(event){
     log("in handleInputChange()");
     const name = event.target.name;
     const value = event.target.value;
