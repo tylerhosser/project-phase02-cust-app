@@ -1,16 +1,19 @@
-import React, {useState} from 'react';
-import customers from './memdb.js'
+import React, { useState, useEffect } from 'react';
+import { getAll, post, put, deleteById } from './memdb.js'
 import './App.css';
 
 function log(message){console.log(message);}
 
 export function App(params) {
   let blankCustomer = { "id": -1, "name": "", "email": "", "password": "" };
+  const [customers, setCustomers] = useState([]);
   const [formObject, setFormObject] = useState(blankCustomer);
   let mode = (formObject.id >= 0) ? 'Update' : 'Add';
+  useEffect(() => { getCustomers() }, []);
 
   const getCustomers =  function(){
     log("in getCustomers()");
+    setCustomers(getAll());
   }
 
   const handleListClick = function(item){
@@ -24,6 +27,7 @@ export function App(params) {
 
   let onCancelClick = function () {
     log("in onCancelClick()");
+    setFormObject(blankCustomer);
   }
 
   let onDeleteClick = function () {
