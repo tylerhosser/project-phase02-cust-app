@@ -43,7 +43,13 @@ export function App(params) {
     }
 
   let onSaveClick = function () {
-    log("in onSaveClick()");
+    if (mode === 'Add') {
+      post(formObject);
+    }
+    if (mode === 'Update') {
+    put(formObject.id, formObject);
+    }
+    setFormObject(blankCustomer);
   }
 
   return (
