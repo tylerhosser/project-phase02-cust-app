@@ -41,7 +41,7 @@ form{
 }
 
 div#root {
-    background-color: lightgrey;
+    background-color: rgb(4, 38, 85);
     width: 350px;
 }
 
@@ -49,7 +49,7 @@ div#root {
     border: 1.5px solid #aaa;
     width: 315px;
     margin: 10px;
-    background-color: #bababa;
+    background-color: #e9d53f;
     display: inline-block;
     border-radius: 5px;
     padding-left: 5px;;
